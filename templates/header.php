@@ -1,3 +1,7 @@
+<?php 
+require_once "connections/conn.php";
+require_once "config/config.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,8 +11,5 @@
 </head>
 
 <body>
-    <nav>
-        
-        
-    </nav>
+    
     
