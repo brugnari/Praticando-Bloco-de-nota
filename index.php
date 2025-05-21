@@ -3,7 +3,7 @@
 <div class="container mt-5">
     <h1 class="mb-4">Bloco de Notas</h1>
     <!-- Formulário para adicionar nota -->
-    <form method="post" action="adicionar.php" class="mb-4">
+    <form method="post" action="controllers/NotaController.php?acao=adicionar" class="mb-4">
         <div class="mb-3">
             <label for="titulo" class="form-label">Título</label>
             <input type="text" class="form-control" id="titulo" name="titulo" required>
