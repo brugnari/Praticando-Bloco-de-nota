@@ -3,15 +3,16 @@ include_once __DIR__ .'/../config/BaseURL.php';
 include_once __DIR__ .'/../config/conn.php'; 
 
     $acao = isset($_GET['acao']) ? $_GET['acao'] : '';
-    $data = date('d/m/Y H:i:s');
+    $data = date('Y-m-d H:i:s');
     switch ($acao) 
     {
-        case 'adicinar':
-            $titulo = $acao['titulo'];
-            $conteudo = $acao['conteudo'];
-            $stmt =$conn->prepare("INSERT INTO notas(data,titulo,conteudo) VALUES(?,?,?)");
+        case 'adicionar':
+            $titulo = $_POST['titulo'];
+            $conteudo = $_POST['conteudo'];
+            $stmt =$conn->prepare("INSERT INTO notas(data_criacao,titulo,conteudo) VALUES(?,?,?)");
             $stmt->execute([$data,$titulo,$conteudo]);
-            break;
+            header("Location:../index.php");
+            exit;
 
         case 'buscar':
             # code...

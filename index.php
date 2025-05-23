@@ -23,7 +23,7 @@
         <?php foreach ($notasCadastradas as $nota): ?>
             <div class="list-group-item">
                 <h5 class="mb-1"><?= htmlspecialchars($nota['titulo']) ?></h5>
-                <small>Data: <?= htmlspecialchars($nota['data']) ?></small>
+                <small>Data: <?= htmlspecialchars($nota['data_criacao']) ?></small>
                  <p class="mb-1"><?= nl2br(htmlspecialchars($nota['conteudo'])) ?></p>
             </div>
         <?php endforeach;?>
