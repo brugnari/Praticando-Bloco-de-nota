@@ -1,6 +1,7 @@
 <?php 
     require_once "templates/header.php";
     require_once "controllers/NotaController.php";
+    $notasCadastradas = ListarNotas($conn)
 ?>
 
 <div class="container mt-5">
@@ -17,17 +18,15 @@
         </div>
         <button type="submit" class="btn btn-primary">Adicionar Nota</button>
     </form>
-
-    <!-- Lista de notas (exemplo estático, substitua pelo loop do banco de dados) -->
+    
     <div class="list-group">
-        <div class="list-group-item">
-            <h5 class="mb-1">Título da Nota</h5>
-            <p class="mb-1">Conteúdo da nota...</p>
-            <small>Data: 15/05/2025</small>
-        </div>
-        <!-- Repita para cada nota -->
+        <?php foreach ($notasCadastradas as $nota): ?>
+            <div class="list-group-item">
+                <h5 class="mb-1"><?= htmlspecialchars($nota['titulo']) ?></h5>
+                <small>Data: <?= htmlspecialchars($nota['data']) ?></small>
+                 <p class="mb-1"><?= nl2br(htmlspecialchars($nota['conteudo'])) ?></p>
+            </div>
+        <?php endforeach;?>
     </div>
 </div>
-
-
 <?php require_once"templates/footer.php"?>
