@@ -1,4 +1,7 @@
-<?php require_once "templates/header.php";?>
+<?php 
+    require_once "templates/header.php";
+    require_once "controllers/NotaController.php";
+?>
 
 <div class="container mt-5">
     <h1 class="mb-4">Bloco de Notas</h1>
