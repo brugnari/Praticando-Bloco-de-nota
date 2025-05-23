@@ -28,5 +28,5 @@ include_once __DIR__ .'/../config/conn.php';
 
     function ListarNotas($conn){
         $stmt = $conn->query("SELECT * FROM notas ORDER BY DESC");
-        $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
